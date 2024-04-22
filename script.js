@@ -1,10 +1,24 @@
 var teams = ['MI', 'CSK', 'KKR', 'SRH'];
+function getPortNumber() {
+    let port = window.location.port;
+    let protocol = window.location.protocol;
+    let host = window.location.hostname;
+    let portNumber = "";
+
+    if (port) {
+        portNumber = ":" + port;
+    }
+
+    return protocol + "//" + host + portNumber + "/";
+}
 // Function to show/hide previous match results
 function showPreviousMatchResults(id) {
     let dropDownBtn = 'dropDownButton' + id;
     let imageSource = document.getElementById(dropDownBtn).src;
-    let triangleUpImageAbsoluteSourceWithPort = "http://127.0.0.1:5501/" + "triangle_facing_up.png";
-    let triangleDownImageAbsoluteSourceWithPort = "http://127.0.0.1:5501/" + "triangle_facing_down.png";
+    let portNumber = getPortNumber();
+    alert(portNumber);
+    let triangleUpImageAbsoluteSourceWithPort = portNumber + "triangle_facing_up.png";
+    let triangleDownImageAbsoluteSourceWithPort = portNumber + "triangle_facing_down.png";
 
     // Close all other dropdowns
     let allDropDownBtns = document.querySelectorAll('[id^="dropDownButton"]');
