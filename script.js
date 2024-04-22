@@ -16,7 +16,7 @@ function showPreviousMatchResults(id) {
     let dropDownBtn = 'dropDownButton' + id;
     let imageSource = document.getElementById(dropDownBtn).src;
     let portNumber = getPortNumber();
-    alert(portNumber);
+    // alert(portNumber);
     let triangleUpImageAbsoluteSourceWithPort = portNumber + "triangle_facing_up.png";
     let triangleDownImageAbsoluteSourceWithPort = portNumber + "triangle_facing_down.png";
 
@@ -262,6 +262,7 @@ function addMatchReport() {
     updateBothTeamStats();
     sortTable();
     changeRankingOfTeams();
+    alert("Table Updated!");
     resetForm();
 }
 
