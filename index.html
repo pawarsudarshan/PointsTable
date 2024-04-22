@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points Table</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid py-3">
+        <div class="row text-center mb-3">
+            <h2>IPL 2024 Points Table</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class="table border text-center" id="pointsTable">
+
+                    <tr>
+                        <th class="topRow" scope="col">#POS</th>
+                        <th class="topRow" scope="col">Team</th>
+                        <th class="topRow" scope="col">P</th>
+                        <th class="topRow" scope="col">W</th>
+                        <th class="topRow" scope="col">L</th>
+                        <th class="topRow" scope="col">NRR</th>
+                        <th class="topRow" scope="col">PTS</th>
+                        <th class="topRow" scope="col"></th>
+                    </tr>
+
+                    <tr class="rowOfMI">
+                        <th class="rowMI" scope="row">1</th>
+                        <td class="rowMI">MI</td>
+                        <td class="rowMI" id="matchesPlayedMI">0</td>
+                        <td class="rowMI" id="matchesWonMI">0</td>
+                        <td class="rowMI" id="matchesLostMI">0</td>
+                        <td class="rowMI" id="NRRMI">0</td>
+                        <td class="rowMI" id="pointsMI">0</td>
+                        <td class="rowMI"><img onclick="showPreviousMatchResults('MI')" id="dropDownButtonMI"
+                                class="m-0 p-0" src="triangle_facing_down.png" alt="triangle facing down"></td>
+                    </tr>
+                    <tr class="rowOfMI">
+                        <td class="m-0 p-0" colspan="12">
+                            <div id="resultsMI">
+                                <table class="table table-borderless dropdownOfTeams mb-0" id="prevResultMI">
+
+                                    <tr>
+                                        <th>OPPONENT</th>
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Result</th>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="rowOfCSK">
+                        <th class="rowCSK" scope="row">2</th>
+                        <td class="rowCSK">CSK</td>
+                        <td class="rowCSK" id="matchesPlayedCSK">0</td>
+                        <td class="rowCSK" id="matchesWonCSK">0</td>
+                        <td class="rowCSK" id="matchesLostCSK">0</td>
+                        <td class="rowCSK" id="NRRCSK">0</td>
+                        <td class="rowCSK" id="pointsCSK">0</td>
+                        <td class="rowCSK"><img onclick="showPreviousMatchResults('CSK')" id="dropDownButtonCSK"
+                                class="m-0 p-0" src="triangle_facing_down.png" alt="triangle facing down"></td>
+                    </tr>
+                    <tr class="rowOfCSK">
+                        <td class="m-0 p-0" colspan="12">
+                            <div id="resultsCSK">
+                                <table class="table dropdownOfTeams mb-0" id="prevResultCSK">
+
+                                    <tr>
+                                        <th>OPPONENT</th>
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Result</th>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="rowOfKKR">
+                        <th class="rowKKR" scope="row">3</th>
+                        <td class="rowKKR">KKR</td>
+                        <td class="rowKKR" id="matchesPlayedKKR">0</td>
+                        <td class="rowKKR" id="matchesWonKKR">0</td>
+                        <td class="rowKKR" id="matchesLostKKR">0</td>
+                        <td class="rowKKR" id="NRRKKR">0</td>
+                        <td class="rowKKR" id="pointsKKR">0</td>
+                        <td class="rowKKR"><img onclick="showPreviousMatchResults('KKR')" id="dropDownButtonKKR"
+                                class="m-0 p-0" src="triangle_facing_down.png" alt="triangle facing down"></td>
+                    </tr>
+                    <tr class="rowOfKKR">
+                        <td class="m-0 p-0" colspan="12">
+                            <div id="resultsKKR">
+                                <table class="table dropdownOfTeams mb-0" id="prevResultKKR">
+
+                                    <tr>
+                                        <th>OPPONENT</th>
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Result</th>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="rowOfSRH">
+                        <th class="rowSRH" scope="row">4</th>
+                        <td class="rowSRH">SRH</td>
+                        <td class="rowSRH" id="matchesPlayedSRH">0</td>
+                        <td class="rowSRH" id="matchesWonSRH">0</td>
+                        <td class="rowSRH" id="matchesLostSRH">0</td>
+                        <td class="rowSRH" id="NRRSRH">0</td>
+                        <td class="rowSRH" id="pointsSRH">0</td>
+                        <td class="rowSRH"><img onclick="showPreviousMatchResults('SRH')" id="dropDownButtonSRH"
+                                class="m-0 p-0" src="triangle_facing_down.png" alt="triangle facing down"></td>
+                    </tr>
+
+                    <tr class="rowOfSRH">
+                        <td id="tabledataSRH" class="m-0 p-0" colspan="12">
+                            <div id="resultsSRH">
+                                <table class="table dropdownOfTeams mb-0" id="prevResultSRH">
+
+                                    <tr>
+                                        <th>OPPONENT</th>
+                                        <th>Date</th>
+                                        <th>Venue</th>
+                                        <th>Result</th>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pb-2" id="addANewMatchReportButton">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <button id="addANewMatchReportButtonMainID" class="btn btn-primary"
+                    onclick="showAddMatchReportMainDiv()">Add a new Match
+                    Report</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="matchReportMainDiv">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div id="inputForm">
+                    <form>
+                        <h5>Add a match report to the points table:</h5>
+                        <p class="fs-6 fw-bolder">Please fill out the form sequentially</p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="teamOne">Team 1</label>
+                                <select class="form-select rounded-0" id="teamOne" onchange="changeTeamTwoSelectBox()">
+                                    <option hidden value="">Select Team 1</option>
+                                    <option id="MI" value="MI">MI</option>
+                                    <option id="CSK" value="CSK">CSK</option>
+                                    <option id="KKR" value="KKR">KKR</option>
+                                    <option id="SRH" value="SRH">SRH</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="teamTwo">Team 2</label>
+                                <select class="form-select rounded-0" id="teamTwo"
+                                    onchange="changeWinningTeamSelectBox()">
+                                    <option hidden value="">Select Team 2</option>
+                                    <option class="opp" id="oppMI" value="MI">MI</option>
+                                    <option class="opp" id="oppCSK" value="CSK">CSK</option>
+                                    <option class="opp" id="oppKKR" value="KKR">KKR</option>
+                                    <option class="opp" id="oppSRH" value="SRH">SRH</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="venue">Venue</label>
+                                <select class="form-select rounded-0" id="venue">
+                                    <option hidden value="">Select Venue</option>
+                                    <option id="homeGroundMI" value="Wankhede Stadium" onchange="venueChange()">Wankhede
+                                        Stadium, Mumbai</option>
+                                    <option id="homeGroundCSK" value="M. A. Chidambaram Stadium">M. A. Chidambaram
+                                        Stadium,
+                                        Chennai</option>
+                                    <option id="homeGroundKKR" value="Eden Gardens">Eden Gardens, Kolkata</option>
+                                    <option id="homeGroundSRH" value="Rajiv Gandhi Stadium">Rajiv Gandhi Stadium,
+                                        Hyderabad
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group mb-0">
+                                    <label for="date">Date</label>
+                                    <input type="date" class="form-control rounded-0" id="date">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-4">
+                                <div class="form-group mt-2">
+                                    <span class="mx-1"></span>
+                                    <label for="winner">Winner</label>
+                                    <select class="form-select rounded-0" id="winner">
+                                        <option hidden value="">Select Winning Team</option>
+                                        <option id="winMI" value="MI">MI</option>
+                                        <option id="winCSK" value="CSK">CSK</option>
+                                        <option id="winKKR" value="KKR">KKR</option>
+                                        <option id="winSRH" value="SRH">SRH</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mt-2">
+                                    <span class="mx-1"></span>
+                                    <label for="winMargin">Win Margin</label>
+                                    <select class="form-select rounded-0" id="winMargin">
+                                        <option selected value="">Select Win Margin</option>
+                                        <option value="byRuns">by runs</option>
+                                        <option value="byWickets">by wickets</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mt-2">
+                                    <span class="mx-1"></span>
+                                    <label for="winMarginQty">Quantify Win Margin</label>
+                                    <input type="text" class="form-control rounded-0" id="winMarginQty">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <button class="btn btn-primary my-2" onclick="addMatchReport()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

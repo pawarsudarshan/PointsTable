@@ -1,0 +1,147 @@
+#resultsMI,
+#resultsCSK,
+#resultsKKR,
+#resultsSRH {
+    display: none;
+}
+
+#winMI,
+#winCSK,
+#winKKR,
+#winSRH {
+    display: none;
+}
+
+#homeGroundMI,
+#homeGroundCSK,
+#homeGroundKKR,
+#homeGroundSRH {
+    display: none;
+}
+
+#oppMI,
+#oppCSK,
+#oppKKR,
+#oppSRH {
+    display: none;
+}
+
+.dropdownOfTeams {
+    border: 1px solid rgb(87, 87, 211);
+    padding: 30px !important;
+}
+
+.rowMI {
+    background-color: #005daa !important;
+}
+
+.rowCSK {
+    background-color: #f7d316 !important;
+}
+
+.rowKKR {
+    background-color: #7c57b5 !important;
+}
+
+.rowSRH {
+    background-color: #fba919 !important;
+}
+
+.topRow {
+    background-color: #a6b4be !important;
+}
+
+#dropDownButtonKKR,
+#dropDownButtonMI,
+#dropDownButtonCSK,
+#dropDownButtonSRH {
+    width: 18px;
+}
+
+td,
+th {
+    padding: 1.5rem !important;
+}
+
+#matchReportMainDiv {
+    display: none;
+}
+
+#addANewMatchReportButtonMainID {
+    background-color: #146ab4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+}
+
+#addANewMatchReportButtonMainID:hover {
+    background-color: #114f85;
+}
+
+.rowMI,
+.rowCSK,
+.rowKKR,
+.rowSRH {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.table {
+    background-color: transparent;
+    padding: 0;
+}
+
+body {
+    background-color: transparent !important;
+}
+
+#tabledataSRH {
+    margin: 0;
+    padding: 0;
+}
+
+#inputForm {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#inputForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+#inputForm input[type="email"],
+#inputForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+#inputForm input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#inputForm input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#winMarginQty {
+    height: inherit;
+}
