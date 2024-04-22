@@ -87,6 +87,7 @@ function updateBothTeamStats() {
     let teamA = document.getElementById('teamOne').value;
     let teamB = document.getElementById('teamTwo').value;
     let winningTeam = document.getElementById('winner').value;
+
     let a = 'matchesPlayed' + teamA;
     let b = 'matchesPlayed' + teamB;
     let awin = 'matchesWon' + teamA;
@@ -97,14 +98,17 @@ function updateBothTeamStats() {
     let bpoints = 'points' + teamB;
     let aNRR = 'NRR' + teamA;
     let bNRR = 'NRR' + teamB;
+
     let teamAPlayed = parseInt(document.getElementById(a).innerHTML);
     let teamBPlayed = parseInt(document.getElementById(b).innerHTML);
     let teamAWon = parseInt(document.getElementById(awin).innerHTML);
     let teamBWon = parseInt(document.getElementById(bwin).innerHTML);
     let teamALost = parseInt(document.getElementById(alost).innerHTML);
     let teamBLost = parseInt(document.getElementById(blost).innerHTML);
+
     teamAPlayed++;
     teamBPlayed++;
+
     if (teamA == winningTeam) {
         teamAWon++;
         teamBLost++;
@@ -112,24 +116,31 @@ function updateBothTeamStats() {
         teamALost++;
         teamBWon++;
     }
+
     document.getElementById(a).innerHTML = teamAPlayed;
     document.getElementById(b).innerHTML = teamBPlayed;
     document.getElementById(awin).innerHTML = teamAWon;
     document.getElementById(bwin).innerHTML = teamBWon;
     document.getElementById(alost).innerHTML = teamALost;
     document.getElementById(blost).innerHTML = teamBLost;
+
     let teamAPoints = parseInt(document.getElementById(apoints).innerHTML);
     let teamBPoints = parseInt(document.getElementById(bpoints).innerHTML);
+
     if (teamA == winningTeam) {
         teamAPoints += 2;
     } else {
         teamBPoints += 2;
     }
+
     document.getElementById(apoints).innerHTML = teamAPoints;
     document.getElementById(bpoints).innerHTML = teamBPoints;
+
     let totalANRR = parseFloat(document.getElementById(aNRR).innerHTML) * teamAPlayed;
     let totalBNRR = parseFloat(document.getElementById(bNRR).innerHTML) * teamBPlayed;
+
     let winMargin = document.getElementById('winMargin').value;
+
     if (winMargin == "byRuns") {
         let winMarginQty = document.getElementById('winMarginQty').value * 0.05;
         let teamANRR;
@@ -161,10 +172,9 @@ function updateBothTeamStats() {
 
 // Function to display home ground based on team selection
 function displayHomeGround(teamAhomeID, teamBhomeID) {
-    document.getElementById("homeGroundMI").style.display = "none";
-    document.getElementById("homeGroundCSK").style.display = "none";
-    document.getElementById("homeGroundKKR").style.display = "none";
-    document.getElementById("homeGroundSRH").style.display = "none";
+    for (i = 0; i < teams.length; i++) {
+        document.getElementById("homeGround" + teams[i]).style.display = "none";
+    }
     document.getElementById(teamAhomeID).style.display = "inline";
     document.getElementById(teamBhomeID).style.display = "inline";
 }
@@ -175,10 +185,9 @@ function setWinningTeamSelectBox() {
     let teamB = document.getElementById('teamTwo').value;
     let teamAwinID = "win" + teamA;
     let teamBwinID = "win" + teamB;
-    document.getElementById("winMI").style.display = "none";
-    document.getElementById("winCSK").style.display = "none";
-    document.getElementById("winKKR").style.display = "none";
-    document.getElementById("winSRH").style.display = "none";
+    teams.forEach(team => {
+        document.getElementById("win" + team).style.display = "none";
+    });
     document.getElementById(teamAwinID).style.display = "inline";
     document.getElementById(teamBwinID).style.display = "inline";
 }
@@ -260,8 +269,10 @@ function addMatchReport() {
             new_row2.cells[i].style.padding = "0.5rem";
         }
     }
+
     x.appendChild(new_row);
     y.appendChild(new_row2);
+
     updateBothTeamStats();
     sortTable();
     changeRankingOfTeams();
