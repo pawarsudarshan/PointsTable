@@ -223,14 +223,17 @@ function addMatchReport() {
             winningStatement = winningTeam + " beat " + teamA + " by " + winMarginQty + " Wickets";
         }
     }
+
     new_row.cells[0].innerHTML = teamB;
     new_row.cells[1].innerHTML = date;
     new_row.cells[2].innerHTML = venue;
     new_row.cells[3].innerHTML = winningStatement;
+
     new_row2.cells[0].innerHTML = teamA;
     new_row2.cells[1].innerHTML = date;
     new_row2.cells[2].innerHTML = venue;
     new_row2.cells[3].innerHTML = winningStatement;
+
     if (winningTeam == teamA) {
         for (i = 0; i < 4; i++) {
             new_row.cells[i].style.color = "green";
@@ -361,27 +364,3 @@ function resetForm() {
         winningTeamSelectBox.options[i].style.display = "none";
     }
 }
-
-
-
-
-// function showAllFromTeam1() {
-//     let teamOneSelectBox = document.getElementById('teamOne');
-//     for (let i = 0; i < teamOneSelectBox.options.length; i++) {
-//         teamOneSelectBox.options[i].style.display = "block";
-//     }
-// }
-
-// function showAllFromTeam2() {
-//     let teamTwoSelectBox = document.getElementById('teamTwo');
-//     for (let i = 0; i < teamTwoSelectBox.options.length; i++) {
-//         teamTwoSelectBox.options[i].style.display = "block";
-//     }
-// }
-
-// function displayAllVenueOptions() {
-//     let venueSelectBox = document.getElementById('venue');
-//     for (let i = 0; i < venueSelectBox.options.length; i++) {
-//         venueSelectBox.options[i].style.display = "block";
-//     }
-// }
